@@ -1,0 +1,1478 @@
+local template = Instance.new("ScreenGui")
+template.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+template.Name = "Template"
+template.Parent = game:GetService("CoreGui")
+
+local background = Instance.new("Frame")
+background.BackgroundColor3 = Color3.new(0, 0, 0)
+background.Position = UDim2.new(0.254692852, 0, 0.172281459, 0)
+background.Size = UDim2.new(0, 600, 0, 400)
+background.Name = "Background"
+background.Parent = template
+
+local background_uistroke = Instance.new("UIStroke")
+background_uistroke.Color = Color3.new(1, 1, 1)
+background_uistroke.Thickness = 9
+background_uistroke.Name = "BackgroundUIStroke"
+background_uistroke.Parent = background
+
+local rainbow_effect = Instance.new("LocalScript")
+rainbow_effect.Name = "RainbowEffect"
+rainbow_effect.Parent = background_uistroke
+
+local background_holder = Instance.new("Frame")
+background_holder.BackgroundColor3 = Color3.new(0, 0, 0)
+background_holder.BackgroundTransparency = 1
+background_holder.Position = UDim2.new(-0.00163625181, 0, -0.000441163778, 0)
+background_holder.Size = UDim2.new(0, 600, 0, 400)
+background_holder.ZIndex = 10
+background_holder.Name = "BackgroundHolder"
+background_holder.Parent = background
+
+local uicorner = Instance.new("UICorner")
+uicorner.CornerRadius = UDim.new(0, 20)
+uicorner.Parent = background_holder
+
+local uistroke = Instance.new("UIStroke")
+uistroke.Color = Color3.new(1, 1, 1)
+uistroke.Thickness = 9
+uistroke.Parent = background_holder
+
+local rainbow_effect_2 = Instance.new("LocalScript")
+rainbow_effect_2.Name = "RainbowEffect"
+rainbow_effect_2.Parent = uistroke
+
+local title_frame = Instance.new("Frame")
+title_frame.BackgroundColor3 = Color3.new(0.0862745, 0.0862745, 0.0862745)
+title_frame.Selectable = true
+title_frame.Size = UDim2.new(0, 600, 0, 66)
+title_frame.ZIndex = 9
+title_frame.Name = "TitleFrame"
+title_frame.Parent = background
+
+local uicorner_2 = Instance.new("UICorner")
+uicorner_2.CornerRadius = UDim.new(0, 7)
+uicorner_2.Parent = title_frame
+
+local text_label = Instance.new("TextLabel")
+text_label.Font = Enum.Font.GothamBlack
+text_label.Text = "Example script title"
+text_label.TextColor3 = Color3.new(1, 1, 1)
+text_label.TextSize = 39
+text_label.BackgroundColor3 = Color3.new(1, 1, 1)
+text_label.BackgroundTransparency = 1
+text_label.Size = UDim2.new(0, 446, 0, 66)
+text_label.ZIndex = 10
+text_label.Parent = title_frame
+
+local label_stroke = Instance.new("UIStroke")
+label_stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+label_stroke.Color = Color3.new(1, 1, 1)
+label_stroke.Thickness = 0
+label_stroke.Name = "LabelStroke"
+label_stroke.Parent = text_label
+
+local rainbow_effect_3 = Instance.new("LocalScript")
+rainbow_effect_3.Name = "RainbowEffect"
+rainbow_effect_3.Parent = label_stroke
+
+local label_uicorner = Instance.new("UICorner")
+label_uicorner.CornerRadius = UDim.new(0, 20)
+label_uicorner.Name = "LabelUICorner"
+label_uicorner.Parent = text_label
+
+local close_button = Instance.new("TextButton")
+close_button.Font = Enum.Font.GothamBlack
+close_button.Text = "X"
+close_button.TextColor3 = Color3.new(1, 1, 1)
+close_button.TextScaled = true
+close_button.TextSize = 14
+close_button.TextWrapped = true
+close_button.BackgroundColor3 = Color3.new(1, 0, 0)
+close_button.Position = UDim2.new(0.890000045, 0, 0.303030401, 0)
+close_button.Size = UDim2.new(0, 25, 0, 25)
+close_button.ZIndex = 10
+close_button.Name = "CloseButton"
+close_button.Parent = title_frame
+
+local uicorner_3 = Instance.new("UICorner")
+uicorner_3.CornerRadius = UDim.new(0, 6)
+uicorner_3.Parent = close_button
+
+local uistroke_2 = Instance.new("UIStroke")
+uistroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_2.Color = Color3.new(1, 1, 1)
+uistroke_2.Thickness = 3
+uistroke_2.Parent = close_button
+
+local close_button_function = Instance.new("LocalScript")
+close_button_function.Name = "CloseButtonFunction"
+close_button_function.Parent = close_button
+
+local help_button = Instance.new("TextButton")
+help_button.Font = Enum.Font.GothamBlack
+help_button.Text = "?"
+help_button.TextColor3 = Color3.new(1, 1, 1)
+help_button.TextScaled = true
+help_button.TextSize = 14
+help_button.TextWrapped = true
+help_button.BackgroundColor3 = Color3.new(0, 0, 1)
+help_button.Position = UDim2.new(0.721666753, 0, 0.303030401, 0)
+help_button.Size = UDim2.new(0, 25, 0, 25)
+help_button.ZIndex = 10
+help_button.Name = "HelpButton"
+help_button.Parent = title_frame
+
+local uicorner_4 = Instance.new("UICorner")
+uicorner_4.CornerRadius = UDim.new(0, 6)
+uicorner_4.Parent = help_button
+
+local uistroke_3 = Instance.new("UIStroke")
+uistroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_3.Color = Color3.new(1, 1, 1)
+uistroke_3.Thickness = 3
+uistroke_3.Parent = help_button
+
+local help_button_function = Instance.new("LocalScript")
+help_button_function.Name = "HelpButtonFunction"
+help_button_function.Parent = help_button
+
+local hide_button = Instance.new("TextButton")
+hide_button.Font = Enum.Font.GothamBlack
+hide_button.Text = "="
+hide_button.TextColor3 = Color3.new(1, 1, 1)
+hide_button.TextScaled = true
+hide_button.TextSize = 14
+hide_button.TextWrapped = true
+hide_button.BackgroundColor3 = Color3.new(0.266667, 0.266667, 0.266667)
+hide_button.Position = UDim2.new(0.805000067, 0, 0.303030401, 0)
+hide_button.Size = UDim2.new(0, 25, 0, 25)
+hide_button.ZIndex = 10
+hide_button.Name = "HideButton"
+hide_button.Parent = title_frame
+
+local uistroke_4 = Instance.new("UIStroke")
+uistroke_4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_4.Color = Color3.new(1, 1, 1)
+uistroke_4.Thickness = 3
+uistroke_4.Parent = hide_button
+
+local uicorner_5 = Instance.new("UICorner")
+uicorner_5.CornerRadius = UDim.new(0, 6)
+uicorner_5.Parent = hide_button
+
+local hide_button_function = Instance.new("LocalScript")
+hide_button_function.Name = "HideButtonFunction"
+hide_button_function.Parent = hide_button
+
+local sections_holder = Instance.new("Frame")
+sections_holder.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+sections_holder.BackgroundTransparency = 1
+sections_holder.Position = UDim2.new(0, 0, 0.165000007, 0)
+sections_holder.Size = UDim2.new(0, 136, 0, 334)
+sections_holder.ZIndex = 4
+sections_holder.Name = "SectionsHolder"
+sections_holder.Parent = background
+
+local section1 = Instance.new("TextButton")
+section1.Font = Enum.Font.GothamBlack
+section1.Text = "Section 1"
+section1.TextColor3 = Color3.new(0, 0, 0)
+section1.TextSize = 14
+section1.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+section1.BackgroundTransparency = 1
+section1.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+section1.BorderSizePixel = 0
+section1.Size = UDim2.new(0, 136, 0, 56)
+section1.Name = "Section 1"
+section1.Parent = sections_holder
+
+local section_function = Instance.new("LocalScript")
+section_function.Name = "SectionFunction"
+section_function.Parent = section1
+
+local section2 = Instance.new("TextButton")
+section2.Font = Enum.Font.GothamBlack
+section2.Text = "Section 2"
+section2.TextColor3 = Color3.new(1, 1, 1)
+section2.TextSize = 14
+section2.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+section2.BorderSizePixel = 0
+section2.Size = UDim2.new(0, 136, 0, 56)
+section2.Name = "Section 2"
+section2.Parent = sections_holder
+
+local section_function_2 = Instance.new("LocalScript")
+section_function_2.Name = "SectionFunction"
+section_function_2.Parent = section2
+
+local section3 = Instance.new("TextButton")
+section3.Font = Enum.Font.GothamBlack
+section3.Text = "Section 3"
+section3.TextColor3 = Color3.new(1, 1, 1)
+section3.TextSize = 14
+section3.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+section3.BorderSizePixel = 0
+section3.Size = UDim2.new(0, 136, 0, 56)
+section3.Name = "Section 3"
+section3.Parent = sections_holder
+
+local section_function_3 = Instance.new("LocalScript")
+section_function_3.Name = "SectionFunction"
+section_function_3.Parent = section3
+
+local section4 = Instance.new("TextButton")
+section4.Font = Enum.Font.GothamBlack
+section4.Text = "Section 4"
+section4.TextColor3 = Color3.new(1, 1, 1)
+section4.TextSize = 14
+section4.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+section4.BorderSizePixel = 0
+section4.Size = UDim2.new(0, 136, 0, 56)
+section4.Name = "Section 4"
+section4.Parent = sections_holder
+
+local section_function_4 = Instance.new("LocalScript")
+section_function_4.Name = "SectionFunction"
+section_function_4.Parent = section4
+
+local section5 = Instance.new("TextButton")
+section5.Font = Enum.Font.GothamBlack
+section5.Text = "Section 5"
+section5.TextColor3 = Color3.new(1, 1, 1)
+section5.TextSize = 14
+section5.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+section5.BorderSizePixel = 0
+section5.Size = UDim2.new(0, 136, 0, 56)
+section5.Name = "Section 5"
+section5.Parent = sections_holder
+
+local section_function_5 = Instance.new("LocalScript")
+section_function_5.Name = "SectionFunction"
+section_function_5.Parent = section5
+
+local section6 = Instance.new("TextButton")
+section6.Font = Enum.Font.GothamBlack
+section6.Text = "Section 6"
+section6.TextColor3 = Color3.new(1, 1, 1)
+section6.TextSize = 14
+section6.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+section6.BorderSizePixel = 0
+section6.Size = UDim2.new(0, 136, 0, 56)
+section6.Name = "Section 6"
+section6.Parent = sections_holder
+
+local section_function_6 = Instance.new("LocalScript")
+section_function_6.Name = "SectionFunction"
+section_function_6.Parent = section6
+
+local uilist_layout = Instance.new("UIListLayout")
+uilist_layout.SortOrder = Enum.SortOrder.LayoutOrder
+uilist_layout.Parent = sections_holder
+
+local uicorner_6 = Instance.new("UICorner")
+uicorner_6.CornerRadius = UDim.new(0, 7)
+uicorner_6.Parent = sections_holder
+
+local scripts_holder = Instance.new("Frame")
+scripts_holder.BackgroundColor3 = Color3.new(1, 1, 1)
+scripts_holder.BackgroundTransparency = 1
+scripts_holder.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+scripts_holder.Position = UDim2.new(0.226666674, 0, 0.165000007, 0)
+scripts_holder.Size = UDim2.new(0, 464, 0, 334)
+scripts_holder.Name = "ScriptsHolder"
+scripts_holder.Parent = background
+
+local script1 = Instance.new("ScrollingFrame")
+script1.CanvasSize = UDim2.new(0, 0, 6, 0)
+script1.Active = true
+script1.BackgroundColor3 = Color3.new(1, 1, 1)
+script1.BackgroundTransparency = 1
+script1.BorderSizePixel = 0
+script1.Size = UDim2.new(0, 464, 0, 334)
+script1.Name = "Script1"
+script1.Parent = scripts_holder
+
+local uilist_layout_2 = Instance.new("UIListLayout")
+uilist_layout_2.Padding = UDim.new(0, 15)
+uilist_layout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilist_layout_2.SortOrder = Enum.SortOrder.LayoutOrder
+uilist_layout_2.Parent = script1
+
+local title = Instance.new("TextLabel")
+title.Font = Enum.Font.GothamBlack
+title.Text = "Title"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextSize = 20
+title.TextTransparency = 0.5
+title.BackgroundColor3 = Color3.new(1, 1, 1)
+title.BackgroundTransparency = 1
+title.LayoutOrder = 1
+title.Size = UDim2.new(0, 300, 0, 30)
+title.Name = "Title"
+title.Parent = script1
+
+local script_function = Instance.new("TextButton")
+script_function.Font = Enum.Font.GothamBlack
+script_function.Text = "Script function 1"
+script_function.TextColor3 = Color3.new(1, 1, 1)
+script_function.TextSize = 14
+script_function.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+script_function.LayoutOrder = 2
+script_function.Size = UDim2.new(0, 300, 0, 40)
+script_function.Name = "ScriptFunction"
+script_function.Parent = script1
+
+local uicorner_7 = Instance.new("UICorner")
+uicorner_7.CornerRadius = UDim.new(0, 7)
+uicorner_7.Parent = script_function
+
+local uistroke_5 = Instance.new("UIStroke")
+uistroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_5.Color = Color3.new(1, 1, 1)
+uistroke_5.Thickness = 2
+uistroke_5.Parent = script_function
+
+local local_function = Instance.new("LocalScript")
+local_function.Name = "LocalFunction"
+local_function.Parent = script_function
+
+local script_function2 = Instance.new("TextButton")
+script_function2.Font = Enum.Font.GothamBlack
+script_function2.Text = "Script function 2"
+script_function2.TextColor3 = Color3.new(1, 1, 1)
+script_function2.TextSize = 14
+script_function2.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+script_function2.LayoutOrder = 3
+script_function2.Size = UDim2.new(0, 300, 0, 40)
+script_function2.Name = "ScriptFunction2"
+script_function2.Parent = script1
+
+local uicorner_8 = Instance.new("UICorner")
+uicorner_8.CornerRadius = UDim.new(0, 7)
+uicorner_8.Parent = script_function2
+
+local uistroke_6 = Instance.new("UIStroke")
+uistroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_6.Color = Color3.new(1, 1, 1)
+uistroke_6.Thickness = 2
+uistroke_6.Parent = script_function2
+
+local local_function_2 = Instance.new("LocalScript")
+local_function_2.Name = "LocalFunction"
+local_function_2.Parent = script_function2
+
+local script2 = Instance.new("ScrollingFrame")
+script2.CanvasSize = UDim2.new(0, 0, 6, 0)
+script2.Active = true
+script2.BackgroundColor3 = Color3.new(1, 1, 1)
+script2.BackgroundTransparency = 1
+script2.BorderSizePixel = 0
+script2.Size = UDim2.new(0, 464, 0, 334)
+script2.Name = "Script2"
+script2.Parent = scripts_holder
+
+local hidescript2 = Instance.new("LocalScript")
+hidescript2.Name = "Hidescript2"
+hidescript2.Parent = script2
+
+local title_2 = Instance.new("TextLabel")
+title_2.Font = Enum.Font.GothamBlack
+title_2.Text = "Title"
+title_2.TextColor3 = Color3.new(1, 1, 1)
+title_2.TextSize = 20
+title_2.TextTransparency = 0.5
+title_2.BackgroundColor3 = Color3.new(1, 1, 1)
+title_2.BackgroundTransparency = 1
+title_2.Size = UDim2.new(0, 300, 0, 30)
+title_2.Name = "Title"
+title_2.Parent = script2
+
+local uilist_layout_3 = Instance.new("UIListLayout")
+uilist_layout_3.Padding = UDim.new(0, 8)
+uilist_layout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilist_layout_3.SortOrder = Enum.SortOrder.LayoutOrder
+uilist_layout_3.Parent = script2
+
+local script3 = Instance.new("ScrollingFrame")
+script3.CanvasSize = UDim2.new(0, 0, 6, 0)
+script3.Active = true
+script3.BackgroundColor3 = Color3.new(1, 1, 1)
+script3.BackgroundTransparency = 1
+script3.BorderSizePixel = 0
+script3.Size = UDim2.new(0, 464, 0, 334)
+script3.Name = "Script3"
+script3.Parent = scripts_holder
+
+local hidescript3 = Instance.new("LocalScript")
+hidescript3.Name = "Hidescript3"
+hidescript3.Parent = script3
+
+local title_3 = Instance.new("TextLabel")
+title_3.Font = Enum.Font.GothamBlack
+title_3.Text = "Title"
+title_3.TextColor3 = Color3.new(1, 1, 1)
+title_3.TextSize = 20
+title_3.TextTransparency = 0.5
+title_3.BackgroundColor3 = Color3.new(1, 1, 1)
+title_3.BackgroundTransparency = 1
+title_3.Size = UDim2.new(0, 300, 0, 30)
+title_3.Name = "Title"
+title_3.Parent = script3
+
+local uilist_layout_4 = Instance.new("UIListLayout")
+uilist_layout_4.Padding = UDim.new(0, 8)
+uilist_layout_4.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilist_layout_4.SortOrder = Enum.SortOrder.LayoutOrder
+uilist_layout_4.Parent = script3
+
+local script4 = Instance.new("ScrollingFrame")
+script4.CanvasSize = UDim2.new(0, 0, 6, 0)
+script4.Active = true
+script4.BackgroundColor3 = Color3.new(1, 1, 1)
+script4.BackgroundTransparency = 1
+script4.BorderSizePixel = 0
+script4.Size = UDim2.new(0, 464, 0, 334)
+script4.Name = "Script4"
+script4.Parent = scripts_holder
+
+local hidescript4 = Instance.new("LocalScript")
+hidescript4.Name = "Hidescript4"
+hidescript4.Parent = script4
+
+local title_4 = Instance.new("TextLabel")
+title_4.Font = Enum.Font.GothamBlack
+title_4.Text = "Title"
+title_4.TextColor3 = Color3.new(1, 1, 1)
+title_4.TextSize = 20
+title_4.TextTransparency = 0.5
+title_4.BackgroundColor3 = Color3.new(1, 1, 1)
+title_4.BackgroundTransparency = 1
+title_4.Size = UDim2.new(0, 300, 0, 30)
+title_4.Name = "Title"
+title_4.Parent = script4
+
+local uilist_layout_5 = Instance.new("UIListLayout")
+uilist_layout_5.Padding = UDim.new(0, 8)
+uilist_layout_5.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilist_layout_5.SortOrder = Enum.SortOrder.LayoutOrder
+uilist_layout_5.Parent = script4
+
+local script5 = Instance.new("ScrollingFrame")
+script5.CanvasSize = UDim2.new(0, 0, 6, 0)
+script5.Active = true
+script5.BackgroundColor3 = Color3.new(1, 1, 1)
+script5.BackgroundTransparency = 1
+script5.BorderSizePixel = 0
+script5.Size = UDim2.new(0, 464, 0, 334)
+script5.Name = "Script5"
+script5.Parent = scripts_holder
+
+local hidescript5 = Instance.new("LocalScript")
+hidescript5.Name = "Hidescript5"
+hidescript5.Parent = script5
+
+local title_5 = Instance.new("TextLabel")
+title_5.Font = Enum.Font.GothamBlack
+title_5.Text = "Title"
+title_5.TextColor3 = Color3.new(1, 1, 1)
+title_5.TextSize = 20
+title_5.TextTransparency = 0.5
+title_5.BackgroundColor3 = Color3.new(1, 1, 1)
+title_5.BackgroundTransparency = 1
+title_5.Size = UDim2.new(0, 300, 0, 30)
+title_5.Name = "Title"
+title_5.Parent = script5
+
+local uilist_layout_6 = Instance.new("UIListLayout")
+uilist_layout_6.Padding = UDim.new(0, 8)
+uilist_layout_6.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilist_layout_6.SortOrder = Enum.SortOrder.LayoutOrder
+uilist_layout_6.Parent = script5
+
+local script6 = Instance.new("ScrollingFrame")
+script6.CanvasSize = UDim2.new(0, 0, 6, 0)
+script6.Active = true
+script6.BackgroundColor3 = Color3.new(1, 1, 1)
+script6.BackgroundTransparency = 1
+script6.BorderSizePixel = 0
+script6.Size = UDim2.new(0, 464, 0, 334)
+script6.Name = "Script6"
+script6.Parent = scripts_holder
+
+local hidescript6 = Instance.new("LocalScript")
+hidescript6.Name = "Hidescript6"
+hidescript6.Parent = script6
+
+local title_6 = Instance.new("TextLabel")
+title_6.Font = Enum.Font.GothamBlack
+title_6.Text = "Title"
+title_6.TextColor3 = Color3.new(1, 1, 1)
+title_6.TextSize = 20
+title_6.TextTransparency = 0.5
+title_6.BackgroundColor3 = Color3.new(1, 1, 1)
+title_6.BackgroundTransparency = 1
+title_6.Size = UDim2.new(0, 300, 0, 30)
+title_6.Name = "Title"
+title_6.Parent = script6
+
+local uilist_layout_7 = Instance.new("UIListLayout")
+uilist_layout_7.Padding = UDim.new(0, 8)
+uilist_layout_7.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uilist_layout_7.SortOrder = Enum.SortOrder.LayoutOrder
+uilist_layout_7.Parent = script6
+
+local background_uicorner = Instance.new("UICorner")
+background_uicorner.CornerRadius = UDim.new(0, 20)
+background_uicorner.Name = "BackgroundUICorner"
+background_uicorner.Parent = background
+
+local auto_pos = Instance.new("LocalScript")
+auto_pos.Name = "AutoPos"
+auto_pos.Parent = background
+
+local sections_default = Instance.new("Frame")
+sections_default.BackgroundColor3 = Color3.new(1, 1, 1)
+sections_default.Position = UDim2.new(0, 0, 0.165000007, 0)
+sections_default.Size = UDim2.new(0, 136, 0, 334)
+sections_default.Name = "SectionsDefault"
+sections_default.Parent = background
+
+local uicorner_9 = Instance.new("UICorner")
+uicorner_9.CornerRadius = UDim.new(0, 7)
+uicorner_9.Parent = sections_default
+
+local uilist_layout_8 = Instance.new("UIListLayout")
+uilist_layout_8.SortOrder = Enum.SortOrder.LayoutOrder
+uilist_layout_8.Parent = sections_default
+
+local rainbow_effect_4 = Instance.new("LocalScript")
+rainbow_effect_4.Name = "RainbowEffect"
+rainbow_effect_4.Parent = sections_default
+
+local draggable = Instance.new("LocalScript")
+draggable.Name = "Draggable"
+draggable.Parent = template
+
+local gui_toggle = Instance.new("TextButton")
+gui_toggle.Font = Enum.Font.GothamBlack
+gui_toggle.Text = "<"
+gui_toggle.TextColor3 = Color3.new(1, 1, 1)
+gui_toggle.TextScaled = true
+gui_toggle.TextSize = 14
+gui_toggle.TextStrokeColor3 = Color3.new(1, 1, 1)
+gui_toggle.TextWrapped = true
+gui_toggle.BackgroundColor3 = Color3.new(0, 0, 0)
+gui_toggle.Position = UDim2.new(0.96063602, 0, 0.0142672118, 0)
+gui_toggle.Size = UDim2.new(0, 50, 0, 50)
+gui_toggle.ZIndex = 20
+gui_toggle.Name = "GuiToggle"
+gui_toggle.Parent = template
+
+local uistroke_7 = Instance.new("UIStroke")
+uistroke_7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_7.Color = Color3.new(1, 1, 1)
+uistroke_7.Thickness = 3
+uistroke_7.Parent = gui_toggle
+
+local rainbow_effect_5 = Instance.new("LocalScript")
+rainbow_effect_5.Name = "RainbowEffect"
+rainbow_effect_5.Parent = uistroke_7
+
+local uicorner_10 = Instance.new("UICorner")
+uicorner_10.CornerRadius = UDim.new(0, 6)
+uicorner_10.Parent = gui_toggle
+
+local gui_toggle_function = Instance.new("LocalScript")
+gui_toggle_function.Name = "GuiToggleFunction"
+gui_toggle_function.Parent = gui_toggle
+
+local gui_toggle_hide_script = Instance.new("LocalScript")
+gui_toggle_hide_script.Name = "GuiToggleHideScript"
+gui_toggle_hide_script.Parent = gui_toggle
+
+local help_frame = Instance.new("Frame")
+help_frame.BackgroundColor3 = Color3.new(0, 0, 0)
+help_frame.Position = UDim2.new(0.336939514, 0, 0.219343558, 0)
+help_frame.Size = UDim2.new(0, 500, 0, 400)
+help_frame.ZIndex = 2
+help_frame.Name = "HelpFrame"
+help_frame.Parent = template
+
+local background_uicorner_2 = Instance.new("UICorner")
+background_uicorner_2.CornerRadius = UDim.new(0, 20)
+background_uicorner_2.Name = "BackgroundUICorner"
+background_uicorner_2.Parent = help_frame
+
+local background_uistroke_2 = Instance.new("UIStroke")
+background_uistroke_2.Color = Color3.new(1, 1, 1)
+background_uistroke_2.Thickness = 6
+background_uistroke_2.Name = "BackgroundUIStroke"
+background_uistroke_2.Parent = help_frame
+
+local rainbow_effect_6 = Instance.new("LocalScript")
+rainbow_effect_6.Name = "RainbowEffect"
+rainbow_effect_6.Parent = background_uistroke_2
+
+local help_frameholder = Instance.new("Frame")
+help_frameholder.BackgroundColor3 = Color3.new(0, 0, 0)
+help_frameholder.BackgroundTransparency = 1
+help_frameholder.Position = UDim2.new(-0.00158393383, 0, -0.00179737806, 0)
+help_frameholder.Size = UDim2.new(0, 500, 0, 400)
+help_frameholder.ZIndex = 5
+help_frameholder.Name = "HelpFrameHolder"
+help_frameholder.Parent = help_frame
+
+local background_uicorner_3 = Instance.new("UICorner")
+background_uicorner_3.CornerRadius = UDim.new(0, 20)
+background_uicorner_3.Name = "BackgroundUICorner"
+background_uicorner_3.Parent = help_frameholder
+
+local background_uistroke_3 = Instance.new("UIStroke")
+background_uistroke_3.Color = Color3.new(1, 1, 1)
+background_uistroke_3.Thickness = 6
+background_uistroke_3.Name = "BackgroundUIStroke"
+background_uistroke_3.Parent = help_frameholder
+
+local rainbow_effect_7 = Instance.new("LocalScript")
+rainbow_effect_7.Name = "RainbowEffect"
+rainbow_effect_7.Parent = background_uistroke_3
+
+local title_frame_2 = Instance.new("Frame")
+title_frame_2.BackgroundColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+title_frame_2.Size = UDim2.new(0, 500, 0, 65)
+title_frame_2.Name = "TitleFrame"
+title_frame_2.Parent = help_frame
+
+local background_uicorner_4 = Instance.new("UICorner")
+background_uicorner_4.CornerRadius = UDim.new(0, 6)
+background_uicorner_4.Name = "BackgroundUICorner"
+background_uicorner_4.Parent = title_frame_2
+
+local help_title = Instance.new("TextLabel")
+help_title.Font = Enum.Font.GothamBlack
+help_title.Text = "Help tab example script"
+help_title.TextColor3 = Color3.new(1, 1, 1)
+help_title.TextSize = 35
+help_title.TextWrapped = true
+help_title.BackgroundColor3 = Color3.new(1, 1, 1)
+help_title.BackgroundTransparency = 1
+help_title.Size = UDim2.new(0, 428, 0, 65)
+help_title.Name = "HelpTitle"
+help_title.Parent = title_frame_2
+
+local close_button_2 = Instance.new("TextButton")
+close_button_2.Font = Enum.Font.GothamBlack
+close_button_2.Text = "X"
+close_button_2.TextColor3 = Color3.new(1, 1, 1)
+close_button_2.TextScaled = true
+close_button_2.TextSize = 14
+close_button_2.TextWrapped = true
+close_button_2.BackgroundColor3 = Color3.new(1, 0, 0)
+close_button_2.Position = UDim2.new(0.872000039, 0, 0.256876558, 0)
+close_button_2.Size = UDim2.new(0, 30, 0, 30)
+close_button_2.Name = "CloseButton"
+close_button_2.Parent = title_frame_2
+
+local uicorner_11 = Instance.new("UICorner")
+uicorner_11.CornerRadius = UDim.new(0, 6)
+uicorner_11.Parent = close_button_2
+
+local uistroke_8 = Instance.new("UIStroke")
+uistroke_8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistroke_8.Color = Color3.new(1, 1, 1)
+uistroke_8.Thickness = 3
+uistroke_8.Parent = close_button_2
+
+local help_close_button_function = Instance.new("LocalScript")
+help_close_button_function.Name = "HelpCloseButtonFunction"
+help_close_button_function.Parent = close_button_2
+
+local sub_help_frame_holder = Instance.new("Frame")
+sub_help_frame_holder.BackgroundColor3 = Color3.new(1, 1, 1)
+sub_help_frame_holder.BackgroundTransparency = 1
+sub_help_frame_holder.Position = UDim2.new(0, 0, 1, 0)
+sub_help_frame_holder.Size = UDim2.new(0, 500, 0, 335)
+sub_help_frame_holder.Name = "SubHelpFrameHolder"
+sub_help_frame_holder.Parent = title_frame_2
+
+local help_uilist_layout = Instance.new("UIListLayout")
+help_uilist_layout.Padding = UDim.new(0, 5)
+help_uilist_layout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+help_uilist_layout.SortOrder = Enum.SortOrder.LayoutOrder
+help_uilist_layout.Name = "HelpUIListLayout"
+help_uilist_layout.Parent = sub_help_frame_holder
+
+local help_subtitle1 = Instance.new("TextLabel")
+help_subtitle1.Font = Enum.Font.SourceSansBold
+help_subtitle1.Text = "- Help tab example title"
+help_subtitle1.TextColor3 = Color3.new(1, 1, 1)
+help_subtitle1.TextSize = 18
+help_subtitle1.TextTransparency = 0.5
+help_subtitle1.TextXAlignment = Enum.TextXAlignment.Left
+help_subtitle1.BackgroundColor3 = Color3.new(1, 1, 1)
+help_subtitle1.BackgroundTransparency = 1
+help_subtitle1.Position = UDim2.new(0.0520000011, 0, -0.0059701493, 0)
+help_subtitle1.Size = UDim2.new(0, 480, 0, 33)
+help_subtitle1.Name = "HelpSubtitle1"
+help_subtitle1.Parent = sub_help_frame_holder
+
+local help_info1 = Instance.new("TextLabel")
+help_info1.Font = Enum.Font.SourceSansBold
+help_info1.Text = "Are you serious right neow bro?"
+help_info1.TextColor3 = Color3.new(1, 1, 1)
+help_info1.TextSize = 14
+help_info1.TextWrapped = true
+help_info1.TextXAlignment = Enum.TextXAlignment.Left
+help_info1.TextYAlignment = Enum.TextYAlignment.Top
+help_info1.BackgroundColor3 = Color3.new(1, 1, 1)
+help_info1.BackgroundTransparency = 1
+help_info1.Position = UDim2.new(0.508000016, 0, 0.0686567128, 0)
+help_info1.Size = UDim2.new(0, 447, 0, 293)
+help_info1.Name = "HelpInfo1"
+help_info1.Parent = sub_help_frame_holder
+
+local helphide_script = Instance.new("LocalScript")
+helphide_script.Name = "HelpHideScript"
+helphide_script.Parent = help_frame
+
+local keys = Instance.new("LocalScript")
+keys.Name = "Keys"
+keys.Parent = template
+
+--//Modules
+
+local modules = {}
+
+--// Scripts
+
+-- RainbowEffect
+task.spawn(function()
+	local script = rainbow_effect
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	while true do
+		for a = 1,360,1 do
+			wait(0.1)
+			script.Parent.Color = Color3.fromHSV(a/360,1,1)
+		end
+	end
+end)
+
+-- RainbowEffect
+task.spawn(function()
+	local script = rainbow_effect_2
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	while true do
+		for a = 1,360,1 do
+			wait(0.1)
+			script.Parent.Color = Color3.fromHSV(a/360,1,1)
+		end
+	end
+end)
+
+-- RainbowEffect
+task.spawn(function()
+	local script = rainbow_effect_3
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	while true do
+		for a = 1,360,1 do
+			wait(0.1)
+			script.Parent.Color = Color3.fromHSV(a/360,1,1)
+		end
+	end
+end)
+
+-- CloseButtonFunction
+task.spawn(function()
+	local script = close_button_function
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	CloseButton = script.Parent
+	Gui = script.Parent.Parent.Parent.Parent
+	
+	CloseButton.MouseButton1Click:Connect(function()
+		Gui:Destroy()
+	end)
+end)
+
+-- HelpButtonFunction
+task.spawn(function()
+	local script = help_button_function
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	HelpButton = script.Parent
+	HelpButton.MouseButton1Click:Connect(function()
+		help_frame.Visible = true
+		background.Visible = false
+	end)
+end)
+
+-- HideButtonFunction
+task.spawn(function()
+	local script = hide_button_function
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	HideButton = script.Parent
+	HideButton.MouseButton1Click:Connect(function()
+		background.Visible = false
+		GuiToggle.Visible = true
+	end)
+end)
+
+-- SectionFunction
+task.spawn(function()
+	local script = section_function
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local Section = script.Parent
+	local Sections = {
+		section1,
+		section2,
+		section3,
+		section4,
+		section5,
+		section6
+	}
+	local Scripts = {
+		script1,
+		script2,
+		script3,
+		script4,
+		script5,
+		script6
+	}
+	Section.MouseButton1Click:Connect(function()
+		for i,v in pairs(Sections) do
+			v.BackgroundTransparency = 0
+		end
+		for i,v in pairs(Sections) do
+			v.TextColor3 = Color3.fromRGB(255, 255, 255)
+		end
+		for i,v in pairs(Scripts) do
+			v.Visible = false
+		end
+		Section.BackgroundTransparency = 1
+		Section.TextColor3 = Color3.fromRGB(0, 0, 0)
+		script1.Visible = true
+	end)
+end)
+
+-- SectionFunction
+task.spawn(function()
+	local script = section_function_2
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local Section = script.Parent
+	local Sections = {
+		section1,
+		section2,
+		section3,
+		section4,
+		section5,
+		section6
+	}
+	local Scripts = {
+		script1,
+		script2,
+		script3,
+		script4,
+		script5,
+		script6
+	}
+	Section.MouseButton1Click:Connect(function()
+		for i,v in pairs(Sections) do
+			v.BackgroundTransparency = 0
+		end
+		for i,v in pairs(Sections) do
+			v.TextColor3 = Color3.fromRGB(255, 255, 255)
+		end
+		for i,v in pairs(Scripts) do
+			v.Visible = false
+		end
+		Section.BackgroundTransparency = 1
+		Section.TextColor3 = Color3.fromRGB(0, 0, 0)
+		script2.Visible = true
+	end)
+end)
+
+-- SectionFunction
+task.spawn(function()
+	local script = section_function_3
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local Section = script.Parent
+	local Sections = {
+		section1,
+		section2,
+		section3,
+		section4,
+		section5,
+		section6
+	}
+	local Scripts = {
+		script1,
+		script2,
+		script3,
+		script4,
+		script5,
+		script6
+	}
+	Section.MouseButton1Click:Connect(function()
+		for i,v in pairs(Sections) do
+			v.BackgroundTransparency = 0
+		end
+		for i,v in pairs(Sections) do
+			v.TextColor3 = Color3.fromRGB(255, 255, 255)
+		end
+		for i,v in pairs(Scripts) do
+			v.Visible = false
+		end
+		Section.BackgroundTransparency = 1
+		Section.TextColor3 = Color3.fromRGB(0, 0, 0)
+		script3.Visible = true
+	end)
+end)
+
+-- SectionFunction
+task.spawn(function()
+	local script = section_function_4
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local Section = script.Parent
+	local Sections = {
+		section1,
+		section2,
+		section3,
+		section4,
+		section5,
+		section6
+	}
+	local Scripts = {
+		script1,
+		script2,
+		script3,
+		script4,
+		script5,
+		script6
+	}
+	Section.MouseButton1Click:Connect(function()
+		for i,v in pairs(Sections) do
+			v.BackgroundTransparency = 0
+		end
+		for i,v in pairs(Sections) do
+			v.TextColor3 = Color3.fromRGB(255, 255, 255)
+		end
+		for i,v in pairs(Scripts) do
+			v.Visible = false
+		end
+		Section.BackgroundTransparency = 1
+		Section.TextColor3 = Color3.fromRGB(0, 0, 0)
+		script4.Visible = true
+	end)
+end)
+
+-- SectionFunction
+task.spawn(function()
+	local script = section_function_5
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local Section = script.Parent
+	local Sections = {
+		section1,
+		section2,
+		section3,
+		section4,
+		section5,
+		section6
+	}
+	local Scripts = {
+		script1,
+		script2,
+		script3,
+		script4,
+		script5,
+		script6
+	}
+	Section.MouseButton1Click:Connect(function()
+		for i,v in pairs(Sections) do
+			v.BackgroundTransparency = 0
+		end
+		for i,v in pairs(Sections) do
+			v.TextColor3 = Color3.fromRGB(255, 255, 255)
+		end
+		for i,v in pairs(Scripts) do
+			v.Visible = false
+		end
+		Section.BackgroundTransparency = 1
+		Section.TextColor3 = Color3.fromRGB(0, 0, 0)
+		script5.Visible = true
+	end)
+end)
+
+-- SectionFunction
+task.spawn(function()
+	local script = section_function_6
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local Section = script.Parent
+	local Sections = {
+		section1,
+		section2,
+		section3,
+		section4,
+		section5,
+		section6
+	}
+	local Scripts = {
+		script1,
+		script2,
+		script3,
+		script4,
+		script5,
+		script6
+	}
+	Section.MouseButton1Click:Connect(function()
+		for i,v in pairs(Sections) do
+			v.BackgroundTransparency = 0
+		end
+		for i,v in pairs(Sections) do
+			v.TextColor3 = Color3.fromRGB(255, 255, 255)
+		end
+		for i,v in pairs(Scripts) do
+			v.Visible = false
+		end
+		Section.BackgroundTransparency = 1
+		Section.TextColor3 = Color3.fromRGB(0, 0, 0)
+		script6.Visible = true
+	end)
+end)
+
+-- LocalFunction
+task.spawn(function()
+	local script = local_function
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local Function = script.Parent
+	Function.MouseButton1Click:Connect(function()
+		print("test 1 omggg")
+	end)
+		
+end)
+
+-- LocalFunction
+task.spawn(function()
+	local script = local_function_2
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local Function = script.Parent
+	Function.MouseButton1Click:Connect(function()
+		print("WHAAAAT")
+	end)
+		
+end)
+
+-- Hidescript2
+task.spawn(function()
+	local script = hidescript2
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	script2 = script.Parent
+	script2.Visible = false
+end)
+
+-- Hidescript3
+task.spawn(function()
+	local script = hidescript3
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	script3 = script.Parent
+	script3.Visible = false
+end)
+
+-- Hidescript4
+task.spawn(function()
+	local script = hidescript4
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	script4 = script.Parent
+	script4.Visible = false
+end)
+
+-- Hidescript5
+task.spawn(function()
+	local script = hidescript5
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	script5 = script.Parent
+	script5.Visible = false
+end)
+
+-- Hidescript6
+task.spawn(function()
+	local script = hidescript6
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	script6 = script.Parent
+	script6.Visible = false
+end)
+
+-- AutoPos
+task.spawn(function()
+	local script = auto_pos
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	Background = script.Parent
+	
+	Background.Position = UDim2.new(0.559176207, 0, 0.013049975, 0)
+end)
+
+-- RainbowEffect
+task.spawn(function()
+	local script = rainbow_effect_4
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	while true do
+		for a = 1,360,1 do
+			wait(0.1)
+			script.Parent.BackgroundColor3 = Color3.fromHSV(a/360,1,1)
+		end
+	end
+end)
+
+-- Draggable
+task.spawn(function()
+	local script = draggable
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	Background = script.Parent.Background
+	Background.Draggable = true
+	Background.Selectable = true
+	Background.Active = true
+end)
+
+-- RainbowEffect
+task.spawn(function()
+	local script = rainbow_effect_5
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	while true do
+		for a = 1,360,1 do
+			wait(0.1)
+			script.Parent.Color = Color3.fromHSV(a/360,1,1)
+		end
+	end
+end)
+
+-- GuiToggleFunction
+task.spawn(function()
+	local script = gui_toggle_function
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	GuiToggle = script.Parent
+	GuiToggle.MouseButton1Click:Connect(function()
+		background.Visible = true
+		GuiToggle.Visible = false
+	end)
+end)
+
+-- GuiToggleHideScript
+task.spawn(function()
+	local script = gui_toggle_hide_script
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	GuiToggle = script.Parent
+	GuiToggle.Visible = false
+end)
+
+-- RainbowEffect
+task.spawn(function()
+	local script = rainbow_effect_6
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	while true do
+		for a = 1,360,1 do
+			wait(0.1)
+			script.Parent.Color = Color3.fromHSV(a/360,1,1)
+		end
+	end
+end)
+
+-- RainbowEffect
+task.spawn(function()
+	local script = rainbow_effect_7
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	while true do
+		for a = 1,360,1 do
+			wait(0.1)
+			script.Parent.Color = Color3.fromHSV(a/360,1,1)
+		end
+	end
+end)
+
+-- HelpCloseButtonFunction
+task.spawn(function()
+	local script = help_close_button_function
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	HelpCloseButton = script.Parent
+	HelpCloseButton.MouseButton1Click:Connect(function()
+		help_frame.Visible = false
+		background.Visible = true
+	end)
+end)
+
+-- HelpHideScript
+task.spawn(function()
+	local script = helphide_script
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	HelpFrame = script.Parent
+	HelpFrame.Visible = false
+end)
+
+-- Keys
+task.spawn(function()
+	local script = keys
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local Prefix = "p"
+	local Prefix2 = "m"
+	local Background = script.Parent.Background
+	local GuiToggle = script.Parent.GuiToggle
+	
+	game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(Key)
+		if Key == Prefix then
+			if Prefix ~= "/" then
+				if Background.Visible == true then
+					Background.Visible = false
+					GuiToggle.Visible = true
+				else
+					Background.Visible = true
+					GuiToggle.Visible = false
+				end
+			end
+		end
+	end)
+	
+	game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(Key)
+		if Key == Prefix2 then
+			if Prefix2 ~= "/" then
+				Background.Position = UDim2.new(0.559176207, 0, 0.013049975, 0)
+			end
+		end
+	end)
+end)
