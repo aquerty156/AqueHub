@@ -1,0 +1,66 @@
+local screen_logo1110 = Instance.new("ScreenGui")
+screen_logo1110.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+screen_logo1110.Name = "ScreenLogo1110"
+screen_logo1110.Parent = game:GetService("CoreGui")
+
+local logo = Instance.new("Frame")
+logo.BackgroundColor3 = Color3.new(1, 1, 1)
+logo.BackgroundTransparency = 1
+logo.Position = UDim2.new(0.959669709, 0, 0.0114379227, 0)
+logo.Selectable = true
+logo.Size = UDim2.new(0, 50, 0, 50)
+logo.Name = "Logo"
+logo.Parent = screen_logo1110
+
+local logo_text = Instance.new("TextLabel")
+logo_text.Font = Enum.Font.GothamBlack
+logo_text.Text = "A"
+logo_text.TextColor3 = Color3.new(1, 1, 1)
+logo_text.TextScaled = true
+logo_text.TextSize = 14
+logo_text.TextStrokeTransparency = 0
+logo_text.TextWrapped = true
+logo_text.Active = true
+logo_text.BackgroundColor3 = Color3.new(1, 1, 1)
+logo_text.BackgroundTransparency = 1
+logo_text.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+logo_text.Position = UDim2.new(-0.00611659884, 0, 0.0179085732, 0)
+logo_text.Size = UDim2.new(0, 50, 0, 50)
+logo_text.ZIndex = 2
+logo_text.Name = "LogoText"
+logo_text.Parent = logo
+
+local uigradient = Instance.new("UIGradient")
+uigradient.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)), ColorSequenceKeypoint.new(0.6038062572479248, Color3.new(0.835294, 0.835294, 0.835294)), ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))})
+uigradient.Rotation = 90
+uigradient.Parent = logo_text
+
+local background = Instance.new("Frame")
+background.BackgroundColor3 = Color3.new(1, 1, 1)
+background.Position = UDim2.new(-0.00586205721, 0, 0.0191503167, 0)
+background.Selectable = true
+background.Size = UDim2.new(0, 50, 0, 50)
+background.Name = "Background"
+background.Parent = logo
+
+local uigradient_2 = Instance.new("UIGradient")
+uigradient_2.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)), ColorSequenceKeypoint.new(0.28373703360557556, Color3.new(0.286275, 0.505882, 0.678431)), ColorSequenceKeypoint.new(0.8702422380447388, Color3.new(0, 0, 0)), ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))})
+uigradient_2.Rotation = 270
+uigradient_2.Parent = background
+
+local background_uicorner = Instance.new("UICorner")
+background_uicorner.CornerRadius = UDim.new(0, 6)
+background_uicorner.Name = "BackgroundUICorner"
+background_uicorner.Parent = background
+
+local background_uistroke = Instance.new("UIStroke")
+background_uistroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+background_uistroke.Color = Color3.new(1, 1, 1)
+background_uistroke.Thickness = 2.5
+background_uistroke.Name = "BackgroundUIStroke"
+background_uistroke.Parent = background
+
+local uigradient_3 = Instance.new("UIGradient")
+uigradient_3.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)), ColorSequenceKeypoint.new(0.28373703360557556, Color3.new(0.286275, 0.505882, 0.678431)), ColorSequenceKeypoint.new(0.8702422380447388, Color3.new(0, 0, 0)), ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))})
+uigradient_3.Rotation = 90
+uigradient_3.Parent = background_uistroke
