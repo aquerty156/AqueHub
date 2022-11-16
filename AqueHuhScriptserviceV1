@@ -1,0 +1,262 @@
+local Prefix = ","
+local GuiPrefix = "p"
+local StarterGuiPrefix = "P"
+local latestupdate = "13/11/25"
+local Versions = "Beta v0.1"
+local Mouse = game.Players.LocalPlayer:GetMouse()
+
+if DisableScript then
+	DisableScript()
+end
+
+local Slient = false
+local ScriptDisabled = false
+local LoopBeam = {}
+local LoopKill = {}
+local LoopTase = {}
+local Admin = {}
+local Watching = nil
+local States = {}
+local BuyGamepass = game:GetService("MarketplaceService"):UserOwnsGamePassAsync(tonumber((game:GetService("Players").LocalPlayer.CharacterAppearance):split('=')[#((game:GetService("Players").LocalPlayer.CharacterAppearance):split('='))]), 96651)
+
+function Goto(Player, Distance)
+	local Distance = Distance or CFrame.new(0, 0, 0)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Player.Character.HumanoidRootPart.CFrame * Distance
+end
+
+function Split(Arguaments, Split)
+	if not Arguaments or not Split then return end
+	return Arguaments:split(Split)
+end
+
+function ChatNotify(Message, Colors, Size)
+	game.StarterGui:SetCore("ChatMakeSystemMessage", {
+		Text = Message,
+		Color = Colors or Color3.fromRGB(255, 255, 255),
+		Font = Enum.Font.SourceSansBold,
+		FontSize = Size or Enum.FontSize.Size48
+	})
+end
+
+function WaitForChild(Time, Parent, Child)
+	if not Parent or not Child then return end
+	if Parent == "LocalPlayer" then Parent = game.Players.LocalPlayer end
+	if Parent == "Character" then Parent = game.Players.LocalPlayer.Character end
+	if Parent == "Backpack" then Parent = game.Players.LocalPlayer.Character.Backpack end
+	local Times = Time * 10 or 1
+	repeat wait(.1)
+		Time = Time - 1
+	until Parent:FindFirstChild(Child) or Time <= 0
+	if Parent and Parent:FindFirstChild(Child) then
+		return Parent:FindFirstChild(Child)
+	else
+		return nil
+	end
+end
+
+local Mouse = game.Players.LocalPlayer:GetMouse()
+
+local function Command(Cmd)
+	return Arg1 == Prefix..Cmd or Arg1 == ">"..Cmd or Arg1 == ";"..Cmd or Arg1 == ":"..Cmd or Arg1 == "?"..Cmd or Arg1 == "!"..Cmd or Arg1 == "."..Cmd
+end
+
+local function PrefixCommand(Cmd)
+	return Arg1 == "!"..Cmd
+end
+
+ChatNotify("Script loaded", Color3.fromRGB(255, 255, 255))
+
+function PlayerChatted(Message)
+	if ScriptDisabled then return end
+	Split = Message:split(" ")
+	Arg1 = Split[1]
+	Arg2 = Split[2]
+	Arg3 = Split[3]
+	Arg4 = Split[4]
+
+	if Command("unload") or Command("destroygui") or PrefixCommand("unload") or PrefixCommand("destroygui") then
+		ChatNotify("Unloading...", Color3.fromRGB(255, 255, 255))
+		wait(.1)
+		pcall(function()
+			game:GetService("CoreGui").CmdGui:Destroy()
+			States = {}
+			LoopKill = {}
+			LoopTase = {}
+			Admin = {}
+			ScriptDisabled = true
+			for i,v in pairs(game.Lighting:GetChildren()) do
+				v.Parent = workspace
+			end
+		end)
+	end
+
+end
+
+game.Players.LocalPlayer.Chatted:Connect(PlayerChatted)
+
+coroutine.wrap(function()
+	while wait() do
+		if States.Kill_Aura then
+			for i,v in pairs(game.Players:GetPlayers()) do
+				pcall(function()
+					if v ~= game.Players.LocalPlayer then
+						local Distance = (v.Character:FindFirstChildOfClass("Part").Position - game.Players.LocalPlayer.Character:FindFirstChildOfClass("Part").Position).magnitude
+						if Distance <= 10 then
+							for i = 1,25 do
+								game.ReplicatedStorage.meleeEvent:FireServer(v)
+							end
+						end
+					end
+				end)
+			end
+		end
+	end
+end)()
+
+function CheckPermissions(Player)
+	Player.Chatted:Connect(function(Message)
+		if Admin[Player.UserId] then
+			AdminPlayerChatted(Message, Player)
+		end
+	end)
+end
+
+game.Players.PlayerRemoving:Connect(function(Player)
+	if States.Notify then
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Game",
+			Text = Player.DisplayName.." Rage Quit",
+			Icon = game.Players:GetUserThumbnailAsync(Player.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size352x352)
+		})
+	end
+	if States.ChatNotify then
+		Chat(Player.DisplayName.." Rage Quit")
+	end
+end)
+
+game.Players.PlayerAdded:Connect(function(Player)
+	if States.Notify then
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Game",
+			Text = Player.DisplayName.." Joined",
+			Icon = game.Players:GetUserThumbnailAsync(Player.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size352x352)
+		})
+	end
+	if States.ChatNotify then
+		Chat(Player.DisplayName.." Joined The Server")
+	end
+	CheckPermissions(Player)
+	CopyChat(Player)
+	Died(Player)
+	PlayerPickUp(Player)
+end)
+
+for i,v in pairs(game.Players:GetPlayers()) do
+	if v ~= game.Players.LocalPlayer then
+		CheckPermissions(v)
+		CopyChat(v)
+		Died(v)
+		PlayerPickUp(v)
+	end
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+	States.CAN = false
+end)
+
+find_cmd.Changed:Connect(function()
+	if find_cmd.Text ~= "" then
+		for i,v in pairs(cmd_handler:GetChildren()) do
+			if v:IsA("TextButton") then
+				if not string.lower(v.Text):match(string.lower(find_cmd.Text)) then
+					v.Parent = background
+					v.Visible = false
+				end
+			end
+		end
+		for i,v in pairs(background:GetChildren()) do
+			if v.Name == "COMMANDS" then
+				if string.lower(v.Text):match(string.lower(find_cmd.Text)) then
+					v.Parent = cmd_handler
+					v.Visible = true
+				end
+			end
+		end
+	elseif find_cmd.Text == "" and (#cmd_handler:GetChildren()-1) ~= #Cmd  then
+		for i,v in pairs(cmd_handler:GetChildren()) do
+			if v:IsA("TextButton") then
+				v:Destroy()
+			end
+		end
+		for i,v in pairs(background:GetChildren()) do
+			if v.Name == "COMMANDS" then
+				v:Destroy()
+			end
+		end
+		for i = 1,#Cmd do
+			local clone = CmdText:Clone()
+			clone.Text = Cmd[i].Text
+			clone.Name = "COMMANDS"
+			local Ins = Instance.new("StringValue", clone)
+			Ins.Name = "Title"
+			Ins.Value = Cmd[i].Title
+			local Ins2 = Instance.new("StringValue", clone)
+			Ins2.Name = "TopbarName"
+			Ins2.Value = Cmd[i].Text:split(" ")[1]
+			clone.Parent = cmd_handler
+			clone.MouseButton1Click:Connect(function()
+				Execute:CaptureFocus()
+				Execute.Text = clone.Text:split(" ")[1]
+				Execute.CursorPosition = #Execute.Text + 1
+			end)
+		end
+	end
+end)
+
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(Key)
+	if Key == Prefix then
+		if Prefix ~= "/" then
+			Execute:CaptureFocus()
+		end
+	end
+end)
+
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(Key)
+	if Key == GuiPrefix then
+		if GuiPrefix ~= "/" then
+			ToggleGui()
+		end
+	end
+end)
+
+Execute.FocusLost:Connect(function(FocusLost)
+	if FocusLost then
+		if Execute.Text:sub(1,#Prefix) ~= Prefix then
+			PlayerChatted(Prefix..Execute.Text)
+		else
+			PlayerChatted(Execute.Text)
+		end
+	end
+end)
+
+getgenv().DisableScript = function()
+	pcall(function()
+		cmd_gui:Destroy()
+		States = {}
+		LoopKill = {}
+		LoopTase = {}
+		Admin = {}
+		ScriptDisabled = true
+		for i,v in pairs(game.Lighting:GetChildren()) do
+			v.Parent = workspace
+		end
+	end)
+end
+
+local function LoadSettings()
+    if _G.StarterMessage == true then
+        background.Visible = false
+    else
+        background.Visible = true
+    end
+end
