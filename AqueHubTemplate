@@ -1,13 +1,3 @@
-												--[[
-													Roblox2Lua
-													----------
-													
-													This code was generated using
-													Deluct's Roblox2Lua plugin.
-												]]--
-
---// Instances
-
 local template = Instance.new("ScreenGui")
 template.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 template.Name = "Template"
